@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.search {
+  height: 50vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.search::before,
+.search img {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.search::before {
+  content: "";
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.25);
+}
+.search img {
+  object-fit: cover;
+}
+.search .content {
+  z-index: 2;
+  color: #fff;
+  padding: 0 13px;
+  text-align: center;
+  position: relative;
+}
+.search h1 {
+  font-size: 2.45rem;
+  font-weight: 600;
+}
+.search p {
+  margin-top: 5px;
+  font-size: 1.3rem;
+}
+.search .search-box {
+  height: 50px;
+  margin: 20px 0 0;
+  position: relative;
+}
+.search-box i {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  cursor: default;
+  color: #8d8d8d;
+  font-size: 1.4rem;
+  transform: translateY(-50%);
+}
+.search-box input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  font-size: 1.1rem;
+  padding-left: 55px;
+  padding-right: 10px;
+  background: #fff;
+  border-radius: 5px;
+}
+.search-box input::placeholder {
+  color: #929292;
+}
+.search-box input:focus::placeholder {
+  color: #bfbfbf;
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.gallery .images {
+  gap: 15px;
+  max-width: 95%;
+  margin-top: 40px;
+  columns: 5 340px;
+  list-style: none;
+}
+.gallery .images .card {
+  display: flex;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 14px;
+  border-radius: 4px;
+}
+.gallery .images img {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+.images .details {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  bottom: -100px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  justify-content: space-between;
+  transition: bottom 0.1s ease;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.images li:hover .details {
+  bottom: 0;
+}
+.photographer {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.photographer i {
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+.photographer span {
+  font-size: 1.05rem;
+}
+button,
+i {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+.details .download {
+  background: #fff;
+  font-size: 1.1rem;
+  padding: 3px 8px;
+}
+
+.gallery .load-more {
+  color: #fff;
+  background: #8a6cff;
+  border-radius: 5px;
+  margin: 50px 0;
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.gallery .load-more:hover {
+  background: #704dff;
+}
+
+.sm {
+  display: flex;
+  gap: 14px;
+  font-size: 1rem;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sm > * {
+  cursor: pointer;
+}
+
+.saved-images {
+  z-index: 100;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.loader img {
+  width: 90px;
+  margin: 60px 0px;
+}
+
+.route-btn {
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+}
+
+.route-btn:hover {
+  background-color: rgb(242, 239, 239);
+}
+
+.empty {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cross{
+  background: #fff;
+    font-size: 1.1rem;
+    padding: 8px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 688px) {
+  .search h1 {
+    font-size: 1.8rem;
+  }
+  .search .search-box {
+    height: 50px;
+    margin: 30px 0;
+  }
+  .gallery .images {
+    max-width: 100%;
+    padding: 0 13px;
+    margin-top: 20px;
+  }
+  .images .details {
+    bottom: 0px;
+  }
+  .gallery .load-more {
+    padding: 10px 25px;
+    font-size: 1.05rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .search h1 {
+    font-size: 1.6rem;
+  }
+
+  .search p {
+    font-size: 1rem;
+  }
+
+  .search .search-box {
+    height: 43px;
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  .sm {
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .saved-images {
+    top: 10px;
+    right: 10px;
+}
+
+.route-btn {
+  padding: 8px 10px;
+  font-size: 0.8rem;
+}
+
+}
